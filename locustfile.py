@@ -20,7 +20,6 @@ class MyTaskSet(TaskSet):
 	user_id = randint(0, len(names)-1)
 	item_id = randint(0, len(product_names)-1)
 	seller_id = randint(0, len(sellers)-1)
-	userParams = {'transaction_id': trans_id, 'user_id': names[user_id], 'seller_id': sellers[seller_id], 'product_name':product_names[item_id], 'sale_price':sale_prices[item_id], 'transaction_date':str(datetime.datetime.now())}
 	token = helper.token
 	broker_props = {'ContentType' : 'application/json'}	
 	headers = {
@@ -28,6 +27,10 @@ class MyTaskSet(TaskSet):
             'Content-Type': 'application/atom+xml;type=entry;charset=utf-8',
             'BrokerProperties': json.dumps(broker_props)
 	}
+	if (trans_id % 600 == 0):
+		userParams = {'transaction_id': trans_id, 'user_id': 'Nil' 'seller_id': 'Nil', 'product_name':'No Product.', 'sale_price':-99.99, 'transaction_date':str(datetime.datetime.now())}
+	else:
+		userParams = {'transaction_id': trans_id, 'user_id': names[user_id], 'seller_id': sellers[seller_id], 'product_name':product_names[item_id], 'sale_price':sale_prices[item_id], 'transaction_date':str(datetime.datetime.now())}
 	response = self.client.post(hostname + '/messages', data= json.dumps(userParams), headers= headers)
 
 class MyLocust(HttpLocust):
