@@ -9,7 +9,7 @@ import time
 namespace = 'shivandersonservicebus'
 queue_name = 'locustrequests'
 key_name = 'policy'
-shared_key = 'Zcuxh9wmHVDMmc65LWIR+kHZqXgXZbcyhNDNPF0NYAA='
+shared_key = 'grtmBRbwTIQF/S1M7cHJlPz/WcQtFtJggW9l++7PmWQ='
 
 def get_auth_token():
     """
