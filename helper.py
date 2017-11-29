@@ -6,7 +6,7 @@ import base64
 import random
 import time
 
-namespace = 'shivandersonservicebus'
+namespace = 'andersonshiva'
 queue_name = 'locustrequests'
 key_name = 'policy'
 shared_key = 'grtmBRbwTIQF/S1M7cHJlPz/WcQtFtJggW9l++7PmWQ='
