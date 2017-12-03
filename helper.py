@@ -6,7 +6,7 @@ import base64
 import random
 import time
 
-namespace = 'andersonshiva'
+namespace = 'STORAGE_FOR_ALL2'
 queue_name = 'locustrequests'
 key_name = 'policy'
 shared_key = 'hWMp4CAWns961n/+3fDgvS8vx5h4ZYqwDSr2Ede8e1I='
