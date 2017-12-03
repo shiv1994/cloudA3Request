@@ -1,7 +1,7 @@
 #!/bin/sh
 cd /home/shiva
 sudo apt-get update
-sudo apt-get -y python
+sudo apt-get -y install python
 sudo apt-get -y install python-pip
 sudo apt-get -y install virtualenv
 git clone https://github.com/shiv1994/cloudA3Request.git
