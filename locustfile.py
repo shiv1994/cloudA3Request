@@ -16,7 +16,7 @@ sale_prices = [1299.99, 450.00, 200.00]
 class MyTaskSet(TaskSet):
     @task
     def send(self):
-	global trans_id, names, product_names, sale_prices, hostname, sellers
+	global trans_id, names, product_names, sale_prices, hostname, sellers, bad_reqs
 	trans_id += 1	
 	user_id = randint(0, len(names)-1)
 	item_id = randint(0, len(product_names)-1)
