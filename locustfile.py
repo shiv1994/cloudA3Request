@@ -6,6 +6,7 @@ import json
 
 hostname = helper.build_host_name()
 trans_id = -1
+bad_reqs = 0
 names = ["Shiva", "Matthew", "Andy", "Nick", "Prof"]
 sellers = ["Frank", "Bob", "Fred"]
 product_names = ["MacBook Pro", "JBL 10 Inch Subwoofer", "Beats Solo2"]
@@ -28,8 +29,9 @@ class MyTaskSet(TaskSet):
             'BrokerProperties': json.dumps(broker_props)
 	}
 	if (trans_id % 600 == 0):
+		bad_reqs+=1
 		userParams = {'transaction_id': trans_id, 'user_id': 'Nil', 'seller_id': 'Nil', 'product_name':'Error', 'sale_price':-99.99, 'transaction_date':str(datetime.datetime.now())}
-		print "Bad Message Sent"
+		print "Bad Message Sent" + str(bad_reqs)
 	else:
 		userParams = {'transaction_id': trans_id, 'user_id': names[user_id], 'seller_id': sellers[seller_id], 'product_name':product_names[item_id], 'sale_price':sale_prices[item_id], 'transaction_date':str(datetime.datetime.now())}
 	response = self.client.post(hostname + '/messages', data= json.dumps(userParams), headers= headers)
