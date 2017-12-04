@@ -9,7 +9,7 @@ import time
 namespace = 'andersonshivafinal'
 queue_name = 'locustrequests'
 key_name = 'policy'
-shared_key = 'hWMp4CAWns961n/+3fDgvS8vx5h4ZYqwDSr2Ede8e1I='
+shared_key = '9T85zSpkwCKTMgR4fEyRpnz+JHTDcbQAvYYfPcRvoNE='
 
 def get_auth_token():
     """
