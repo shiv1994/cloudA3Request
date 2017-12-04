@@ -29,6 +29,7 @@ class MyTaskSet(TaskSet):
 	}
 	if (trans_id % 600 == 0):
 		userParams = {'transaction_id': trans_id, 'user_id': 'Nil', 'seller_id': 'Nil', 'product_name':'Error', 'sale_price':-99.99, 'transaction_date':str(datetime.datetime.now())}
+		print "Bad Message Sent"
 	else:
 		userParams = {'transaction_id': trans_id, 'user_id': names[user_id], 'seller_id': sellers[seller_id], 'product_name':product_names[item_id], 'sale_price':sale_prices[item_id], 'transaction_date':str(datetime.datetime.now())}
 	response = self.client.post(hostname + '/messages', data= json.dumps(userParams), headers= headers)

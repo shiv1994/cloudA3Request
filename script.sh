@@ -11,4 +11,4 @@ cd env
 source bin/activate
 cd ..
 pip install locustio
-locust --host=http://127.0.0.1:8000 --no-web -c 1 -r 1 -n 601000 &
+locust --host=http://127.0.0.1:8000 --no-web -c 50 -r 25 -n 601000 &
